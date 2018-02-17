@@ -12,6 +12,6 @@ exports.update_todoEvent = function(req, res, next) {
 
 };
 
-export.delete_todoEvent = function(req, res, next) {
+exports.delete_todoEvent = function(req, res, next) {
 
 };
