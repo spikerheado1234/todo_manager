@@ -2,7 +2,10 @@ extends layout
 
 block content
   h1= title
-  p A simple TODO Manager with full CRUD Capabilities!
-  p Your TODO List:
+  div(border:'3px solid black')
+    p Your TODO List:
+    if items
+      each data in items
+        li= data.event
   form(method='GET' action='/create')
     input(type='submit')
