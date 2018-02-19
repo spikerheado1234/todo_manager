@@ -2,10 +2,14 @@ extends layout
 
 block content
   h1= title
-  div(border:'3px solid black')
+  div
     p Your TODO List:
     if items
       each data in items
         li= data.event
   form(method='GET' action='/create')
+    label(for='submit') Submit
+    input(type='submit')
+  form(method='DELETE' action='/delete')
+    label(for='delete') Delete
     input(type='submit')
