@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var eventController = require('../controllers/eventController.js');
+var event = require('../models/todoEventModel.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

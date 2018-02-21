@@ -8,4 +8,10 @@ var event = Schema(
   }
 );
 
+// A virtual attribute, helping to define a unique link for each todo event. For ease of deletion later.
+event.virtual('url').get(function() {
+  return '/delete/' + this._id;
+  }
+);
+
 module.exports = mongoose.model('Event', event);

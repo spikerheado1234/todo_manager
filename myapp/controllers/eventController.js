@@ -7,7 +7,6 @@ exports.create_todoEvent = [
   sanitizeBody('event').trim().escape(),
   (req, res, next) => {
     var errors = validationResult(req);
-
     if (!errors.isEmpty()) { // If there are errors whilst validating and sanitizing the data, reder the error page.
       res.render('error', { error: errors.array()});
     } else { // Else create a new object from the data and save it to the database.
@@ -23,14 +22,11 @@ exports.create_todoEvent = [
   }
 ];
 
-exports.read_todoEvent = function(req, res, next) {
-
-};
-
 exports.update_todoEvent = function(req, res, next) {
 
 };
 
 exports.delete_todoEvent = function(req, res, next) {
-  event.findByIdAndRemove().exec();
+  event.findByIdAndRemove({_id: req.params.id }).exec();
+  res.redirect('index');
 };

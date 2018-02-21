@@ -1,6 +1,8 @@
 extends layout
 
 block content
+  a(href='/') HomePage
+  p Please enter your next Todo:
   form(method='POST' action='/create')
     input(type='text' name='event')
-    input(type='submit')
+    input(type='submit' name='event')

@@ -1,15 +1,16 @@
 extends layout
 
 block content
-  h1= title
-  div
-    p Your TODO List:
+  h1(align='center')= title
+  div(class='box_properties' align='center')
+    h2 Your TODO List:
     if items
+      ul
       each data in items
-        li= data.event
-  form(method='GET' action='/create')
-    label(for='submit') Submit
-    input(type='submit')
-  form(method='DELETE' action='/delete')
-    label(for='delete') Delete
-    input(type='submit')
+        li
+          a(href=data.url) #{data.event}
+    else
+        p There are no more events for you to do! To add an event, click the submit button!
+    form(method='GET' action='/create')
+      label(for='submit') Submit
+      input(type='submit')
