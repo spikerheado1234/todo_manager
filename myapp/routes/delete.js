@@ -16,7 +16,9 @@ router.get('/:id', function(req, res) {
   }
 );
 
-// Handles the delete request when the user clicks the delete button. 
+// Handles the delete request when the user clicks the delete button.
 router.delete('/:id', eventController.delete_todoEvent);
+
+router.put('/:id', eventController.update_todoEvent);
 
 module.exports = router;

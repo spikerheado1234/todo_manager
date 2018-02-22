@@ -14,4 +14,10 @@ event.virtual('url').get(function() {
   }
 );
 
+// A virtual attribute, helping to define a unique link for each todo event. For ease of updating later. 
+event.virtual('update').get(function() {
+  return '/update/' + this._id;
+  }
+);
+
 module.exports = mongoose.model('Event', event);

@@ -6,7 +6,9 @@ var event = require('../models/todoEventModel.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'TODO MANAGER'});
+  event.find().then(function(err, data) {
+    res.render('index', {title: "TODO MANAGER", items: data})
+  });
 });
 
 module.exports = router;

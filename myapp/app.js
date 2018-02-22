@@ -12,6 +12,7 @@ mongoose.Promise = global.Promise;
 var index = require('./routes/index');
 var create = require('./routes/create');
 var del = require('./routes/delete');
+var update = require('./routes/update');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/create', create);
 app.use('/delete', del);
+app.use('/update', update);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -5,7 +5,12 @@ block content
   a(href='/') HomePage
 
   if data
-    ul
-      li= data.event
-      form(method='DELETE' action='/delete')
-      input(type='submit' name='delete_event')
+    div(class='box_properties' align='center')
+      ul
+        li= data.event
+        form(method='DELETE' action='/delete/' + data.event.url)
+          label(for='DELETE') DELETE
+          input(type='submit' name='delete_event')
+        form(method='GET' action='/update/' + data.event.url)
+          label(for='UPDATE') UPDATE
+          input(type='submit')

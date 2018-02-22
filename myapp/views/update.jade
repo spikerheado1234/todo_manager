@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  div(class='box_properties' align='center')
+    form(method='PUT' action=item.update)
+      input(type='text' value=item.event)
+      input(type='submit' name='update_event')
